@@ -1,0 +1,32 @@
+﻿<Window x:Class="QRCodePresenter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QRCodePresenter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0"  Grid.Row="0" >Key</Label>
+        <Label Grid.Column="1"  Grid.Row="0" >Public Key</Label>
+        <Label Grid.Column="2"  Grid.Row="0" >Code</Label>
+        <!--<Image x:Name="KeyQRCode" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="1"/>-->
+        <!--<Image x:Name="PKQRCode" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="1"  Grid.Row="1"/>-->
+        <Image x:Name="CipherQRCode" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="1"  Grid.ColumnSpan="2" Grid.Row="1" Width="300"/>
+        <TextBox Name="PinText"  Grid.Column="0"  Grid.Row="2" TextChanged="PinText_TextChanged"    >Pin</TextBox>
+        <Button Grid.Column="1"  Grid.Row="2" Click="Button_Click">Verify</Button>
+        <TextBlock x:Name="VerifyResult" Grid.Column="2"  Grid.Row="2" />
+        <Button x:Name="button" Content="RefreshKey"  Grid.Column="0"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RefreshButton_Click"/>
+
+    </Grid>
+</Window>
